@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stopwatch</title>
+  </head>
+  <body>
+    <div id="wrapper">
+      <h2>
+        <span>00</span> : 
+        <span>00</span> : 
+        <span>00</span>
+    </h2>
+
+      <button>Start</button>
+      <button disabled>Stop</button>
+      <button disabled>Pause</button>
+    </div>
+
+    <script>
+        const start = document.querySelector("button:first-of-type")
+        const stop = document.querySelector("button:nth-of-type(2)")
+        const pause = document.querySelector("button:nth-of-type(3)")
+
+        const spans = document.querySelectorAll("span")
+
+        start.onclick = function(){
+            start.disabled = true
+            stop.disabled = false
+            pause.disabled = false
+
+            //Type casting(type conversion)
+
+            setInterval(() => {
+                spans[2].innerHTML = Number(spans[2].innerHTML) + 1;
+            }, 1000)
+        }
+
+
+    </script>
+  </body>
+</html>
